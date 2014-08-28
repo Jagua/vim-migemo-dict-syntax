@@ -1,0 +1,33 @@
+# migemo-dict-syntax
+
+migemo-dict-syntax is a plugin for vim to highlight for migemo-dict.
+
+
+## Installation
+
+If you use NeoBundle, you write the following settings to your .vimrc.
+
+```vim
+    NeoBundle 'Jagua/vim-migemo-dict-syntax'
+```
+
+
+### Advanced settings
+
+
+```vim
+    NeoBundleLazy 'Jagua/vim-migemo-dict-syntax', {
+    \             'augroup' : 'migemo-dict',
+    \             'filename_patterns' : 'migemo-dict',
+    \             'filetypes' : 'migemo-dict',
+    \ }
+    if neobundle#tap('vim-migemo-dict-syntax') "{{{
+      function! neobundle#tapped.hooks.on_post_source(bundle)
+        doautocmd BufRead
+      endfunction
+      call neobundle#untap()
+    endif "}}}
+```
+
+
+
